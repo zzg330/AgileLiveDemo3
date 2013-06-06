@@ -1,5 +1,8 @@
 package com.autodesk.agiledemo;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Weather {
 	private String city;
 	private String region;
@@ -45,10 +48,34 @@ public class Weather {
 	public void setHumidity(String humidity) {
 		this.humidity = humidity;
 	}
-	public String getWindSpeed() {
+	public String getWindSpeed() {		
 		return windSpeed;
 	}
 	public void setWindSpeed(String windSpeed) {
 		this.windSpeed = windSpeed;
+	}
+	public String getWearingAdvice() {
+		
+		Map<String,String> map = new HashMap<>();
+		map.put("truetrue", "Umbrella, T-shirt");
+		map.put("truefalse", "Raincoat");
+		map.put("falsetrue", "T-shirt");
+		map.put("falsefalse", "Shirts");
+		
+		if (isTemperatureOutOfRange() || isConditionUncovered())
+			return "No Advice";
+		return map.get(String.valueOf(isRaining())+String.valueOf(isHot()));
+	}
+	private boolean isConditionUncovered() {
+		return !(this.condition.equals("Raining")||this.condition.equals("Sunny"));
+	}
+	private boolean isTemperatureOutOfRange() {
+		return this.temperature>=80d || this.temperature<=59d;
+	}
+	private boolean isHot() {
+		return this.temperature>=70d;
+	}
+	private boolean isRaining() {
+		return this.condition.equals("Raining");
 	}	
 }
