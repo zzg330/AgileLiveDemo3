@@ -20,7 +20,7 @@ public class WeatherParser {
 			doc = createXmlReader().read( inputStream );
 		} catch (DocumentException e) {
 			e.printStackTrace();
-			return new Weather();
+			return new Weather();			
 		}
 
 		return createWeatherFromXml(doc);
