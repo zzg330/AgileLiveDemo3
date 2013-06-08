@@ -23,6 +23,7 @@
 	
 	<%if (weather != null) {%>
 	<ul>
+		<li><span id="date">Date: </span><span id="date-value"><%= weather.getDate()%></span></li>
 		<li><span id="city">City: </span><span id="city-value"><%= weather.getCity()%></span></li>
         <li><span id="region">Region: </span><span id="region-value"><%= weather.getRegion()%></span></li>
         <li><span id="country">Country: </span><span id="country-value"><%= weather.getCountry()%></span></li>

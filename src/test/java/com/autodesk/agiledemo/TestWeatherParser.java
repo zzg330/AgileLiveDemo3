@@ -24,5 +24,6 @@ public class TestWeatherParser {
 		assertEquals("Mostly Cloudy", weather.getCondition());
 		assertEquals("81", weather.getHumidity());
 		assertEquals("9", weather.getWindSpeed());
+		assertEquals("Mon, 17 Dec 2012 2:51 am CST", weather.getDate());
 	}
 }

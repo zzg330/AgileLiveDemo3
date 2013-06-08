@@ -28,7 +28,7 @@ public class WeatherParser {
 
 	private Weather createWeatherFromXml(Document doc) {
 		Weather weather = new Weather();
-		
+		weather.setDate( doc.valueOf("/rss/channel/item/y:condition/@date") );
 		weather.setCity( doc.valueOf("/rss/channel/y:location/@city") );
 		weather.setRegion( doc.valueOf("/rss/channel/y:location/@region"));
 		weather.setCountry( doc.valueOf("/rss/channel/y:location/@country") );
