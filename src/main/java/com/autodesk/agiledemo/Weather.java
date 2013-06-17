@@ -65,6 +65,7 @@ public class Weather {
 	public void setWindSpeed(String windSpeed) {
 		this.windSpeed = windSpeed;
 	}
+	
 	public String getWearingAdvice() {
 		
 		Map<String,String> map = new HashMap<>();
